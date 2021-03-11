@@ -1,0 +1,17 @@
+{% extends 'fotoupload/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Сервис загрузки и обработки фотографии</h1>
+
+<div>
+    <form action="{% url 'upload_foto' %}" method="POST" class="dropzone" id="dropzoneform">
+        {% csrf_token %}
+        <div class="fallback">
+            <input name="file" type="file" multiple />
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
